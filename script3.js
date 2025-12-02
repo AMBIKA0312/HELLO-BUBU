@@ -4,13 +4,14 @@ document.addEventListener("DOMContentLoaded", function() {
     const nextBtn = document.getElementById("nextBtn");
 
     // Slides content
-    const slides = [
-        "After millions of years... ⏳💫",
-        "There comes a day... 🌅✨",
-        "We became some janamo janamo ke aashiq (so called Bubu) 💖😍",
-        "We didn't even know what changed, how we came to become 7 janamo ke aashiq from a rude CR and not-in-the-list girl... 🤔💞",
-        "But it never felt forced, if we felt anything then it's pure comfort, friendship and love. 🥰💖"
-    ];
+   const slides = [
+    "After millions of years... ⏳💫",
+    "There comes a day... 🌅✨",
+    "We became some janamo janamo ke aashiq (so called Bubu) 💖😍",
+    "We didn't even know what changed, how we came to become 7 janamo ke aashiq from a rude CR and not-in-the-list girl... 🤔💞",
+    "But it never felt forced, if we felt anything then it's pure comfort, friendship and love. 🥰💖"  // updated line
+];
+
 
     let currentSlide = 0;
     slideContainer.innerHTML = `<p class="slide-text">${slides[currentSlide]}</p>`;
