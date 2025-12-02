@@ -1,6 +1,28 @@
+const choiceResult = document.getElementById("choiceResult");
+const nextBtn = document.getElementById("nextBtn");
+const choiceButtons = document.getElementById("choiceButtons");
+const chapter = document.getElementById("chapter");
+const chat = document.getElementById("chat");
+const chapterNextBtn = document.getElementById("chapterNextBtn");
+
+window.choiceYes = function() {
+    choiceResult.style.color = "#ff007f";
+    choiceResult.innerHTML = "Nice choice 😘";
+    nextBtn.style.display = "inline-block";
+    choiceButtons.style.display = "none";
+}
+
+window.choiceNo = function() {
+    choiceResult.style.color = "red";
+    choiceResult.innerHTML = "What! I will still show you 😏";
+    nextBtn.style.display = "inline-block";
+    choiceButtons.style.display = "none";
+}
+
 window.showChapter = function() {
     document.getElementById("step1").style.display = "none"; // hide Step 1
     chapter.style.display = "block"; // show CH01
+    chat.innerHTML = ""; // clear previous chat if any
 
     const messages = [
         { avatar:"https://i.imgur.com/JS2rIxl.png", text:"Add me to the class group CR 📝✨", side:"left", future:"👩‍🎓 (Future ME: add me to your heart BUBU 💖😘)"},
@@ -43,9 +65,11 @@ window.showChapter = function() {
 
             chat.appendChild(row);
 
-            // Show Next button after last message
+            // Show CH01 Next button after last message
             if(index === messages.length - 1){
-                document.getElementById("chapterNextBtn").style.display = "inline-block";
+                setTimeout(() => {
+                    chapterNextBtn.style.display = "inline-block";
+                }, 800); // small delay for animation effect
             }
 
         }, delay);
@@ -53,7 +77,6 @@ window.showChapter = function() {
     });
 }
 
-// Function to go to page 3
 window.goPage3 = function() {
-    window.location.href = "page3.html"; // Change this to your actual Page 3 file
+    window.location.href = "page3.html"; // Change this to your Page 3 file name
 }
