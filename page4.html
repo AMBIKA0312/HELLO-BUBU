@@ -7,13 +7,16 @@
 <link rel="stylesheet" href="style.css">
 <style>
   body {
-    background: #ffe6f2;
+    background: #ffe6f2; /* Pinkish romantic */
     font-family: 'Arial', sans-serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
+    margin:0;
+    padding:0;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    min-height:100vh;
   }
+
   .container {
     text-align: center;
     max-width: 600px;
@@ -23,12 +26,14 @@
     border-radius: 15px;
     box-shadow: 0 8px 20px rgba(0,0,0,0.2);
   }
+
   .slide-text {
     font-size: 1.5rem;
     color: #ff007f;
-    animation: fadeIn 1s ease-in-out;
     margin-bottom: 20px;
+    animation: fadeIn 1s ease-in-out;
   }
+
   .btn {
     padding: 10px 20px;
     font-size: 1.2rem;
@@ -38,39 +43,52 @@
     border-radius: 8px;
     cursor: pointer;
     margin: 5px;
-    transition: 0.3s;
+    transition:0.3s;
   }
+
   .btn:hover {
     background: #ff1493;
   }
-  .next-btn {
-    display: none;
-  }
+
   .result {
-    font-size: 1.3rem;
-    margin-top: 20px;
+    font-size:1.3rem;
+    margin-top:20px;
   }
+
   @keyframes fadeIn {
-    from {opacity: 0;}
-    to {opacity: 1;}
+    from {opacity:0;}
+    to {opacity:1;}
   }
+
+  /* Responsive text */
+  @media (max-width:500px) {
+    .slide-text {
+      font-size: 1.2rem;
+    }
+    .btn {
+      font-size:1rem;
+      padding:8px 15px;
+    }
+  }
+
 </style>
 </head>
 <body>
 
 <div class="container">
-    <div id="slideContainer"></div>
+  <div id="slideContainer"></div>
 
-    <!-- Choice buttons for slide 2 -->
-    <div id="choiceButtons" style="margin-top:20px; display:none;">
-        <button class="btn" id="yesBtn">Yes 😘</button>
-        <button class="btn" id="noBtn">No 😏</button>
-    </div>
+  <div id="choiceButtons" style="margin-top:20px; display:none;">
+      <button class="btn" id="yesBtn">Yes 😘</button>
+      <button class="btn" id="noBtn">No 😏</button>
+  </div>
 
-    <p id="choiceResult" class="result"></p>
-    <button id="nextBtn" class="btn next-btn">Next ➜</button>
+  <p id="choiceResult" class="result"></p>
+
+  <button id="nextBtn" class="btn">Next ➜</button>
 </div>
 
-<script src="script4.js?v=2"></script>
+<script src="script4.js?v=3"></script>
 </body>
 </html>
+
