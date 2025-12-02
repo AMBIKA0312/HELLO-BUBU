@@ -182,4 +182,59 @@ input:focus {
     0% { transform: translateY(0) rotate(0deg); opacity: 0.6;}
     100% { transform: translateY(-80px) rotate(360deg); opacity: 0;}
 }
+/* Chat bubbles with emojis and typing animation */
+.chat {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.bubble {
+    max-width: 80%;
+    padding: 15px 20px;
+    border-radius: 25px;
+    font-size: 1rem;
+    position: relative;
+    opacity: 0;
+    transform: scale(0.8);
+}
+
+.bubble.left {
+    background: #ffe6f2;
+    color: #ff006e;
+    align-self: flex-start;
+}
+
+.bubble.right {
+    background: #ff4d9c;
+    color: white;
+    align-self: flex-end;
+}
+
+.bubble .future {
+    font-size: 0.85rem;
+    color: #c70055;
+    display: block;
+    margin-top: 5px;
+    font-style: italic;
+}
+
+/* Pop-in animation for bubbles */
+@keyframes popIn {
+    from { opacity: 0; transform: scale(0.6); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+/* Sparkle heart emoji animation */
+.emoji {
+    display: inline-block;
+    animation: bounce 1s ease infinite alternate;
+}
+
+@keyframes bounce {
+    from { transform: translateY(0); }
+    to { transform: translateY(-6px); }
+}
+
 
