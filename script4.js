@@ -12,7 +12,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
     const slides = [
         "LAST CHAPTER 📖✨",
-        "Do you want to know why I, your sugar plum, have been created? 💖"
+        "Do you want to know why I have been your created, my sugar plum? 💖"
     ];
 
     function showSlide(text) {
@@ -36,7 +36,6 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     });
 
-    // Yes/No buttons currently do nothing (answer will be added later)
     yesBtn.addEventListener("click", function() {
         choiceResult.style.color = "#ff1493";
         choiceResult.innerHTML = "💖";
