@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", function() {
         "There comes a day... 🌅✨",
         "We became some janamo janamo ke aashiq (so called Bubu) 💖😍",
         "We didn't even know what changed, how we came to become 7 janamo ke aashiq from a rude CR and not-in-the-list girl... 🤔💞",
-        "But it never felt forced; if anything, then pure comfort, friendship and love. 🥰💖"
+        "But it never felt forced; if we felt anything, then pure comfort, friendship and love. 🥰💖"
     ];
 
     let currentSlide = 0;
