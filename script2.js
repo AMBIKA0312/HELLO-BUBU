@@ -1,23 +1,3 @@
-const choiceResult = document.getElementById("choiceResult");
-const nextBtn = document.getElementById("nextBtn");
-const choiceButtons = document.getElementById("choiceButtons");
-const chapter = document.getElementById("chapter");
-const chat = document.getElementById("chat");
-
-window.choiceYes = function() {
-    choiceResult.style.color = "#ff007f";
-    choiceResult.innerHTML = "Nice choice 😘";
-    nextBtn.style.display = "inline-block";
-    choiceButtons.style.display = "none";
-}
-
-window.choiceNo = function() {
-    choiceResult.style.color = "red";
-    choiceResult.innerHTML = "What! I will still show you 😏";
-    nextBtn.style.display = "inline-block";
-    choiceButtons.style.display = "none";
-}
-
 window.showChapter = function() {
     document.getElementById("step1").style.display = "none"; // hide Step 1
     chapter.style.display = "block"; // show CH01
@@ -28,7 +8,7 @@ window.showChapter = function() {
     ];
 
     let delay = 500;
-    messages.forEach(msg => {
+    messages.forEach((msg, index) => {
         setTimeout(() => {
             const row = document.createElement("div");
             row.classList.add("chat-row");
@@ -62,7 +42,18 @@ window.showChapter = function() {
             }
 
             chat.appendChild(row);
+
+            // Show Next button after last message
+            if(index === messages.length - 1){
+                document.getElementById("chapterNextBtn").style.display = "inline-block";
+            }
+
         }, delay);
         delay += 1800;
     });
+}
+
+// Function to go to page 3
+window.goPage3 = function() {
+    window.location.href = "page3.html"; // Change this to your actual Page 3 file
 }
