@@ -2,32 +2,31 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Game for Bubu</title>
+    <title>Bubu Game</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<div class="game-box">
+<div class="hearts"></div>
 
-    <h1><b>HELLO BUBU<br>LET'S PLAY A GAME!!</b></h1>
+<div class="wrapper">
+    <div class="card">
 
-    <p class="question">
-        WHO IS YOUR BOYFRIEND'S SISTER IS TO YOU?
-    </p>
+        <h1 class="title">HELLO BUBU<br><span class="pink">LET’S PLAY A GAME!!</span></h1>
 
-    <input type="text" id="answerInput" placeholder="Type your answer here..." />
+        <p class="question">WHO IS YOUR BOYFRIEND'S SISTER IS TO YOU?</p>
 
-    <button class="btn" onclick="checkAnswer()">Submit</button>
+        <input type="text" id="answerInput" placeholder="Type your answer..." class="inputBox">
 
-    <p id="result"></p>
+        <button class="btn" onclick="checkAnswer()">Submit</button>
 
-    <button id="nextBtn" class="btn next" style="display:none;" onclick="goNext()">
-        Next →
-    </button>
+        <p id="result"></p>
 
+        <button id="nextBtn" class="btn next" style="display:none;" onclick="goNext()">Next →</button>
+
+    </div>
 </div>
 
 <script src="script.js"></script>
 </body>
 </html>
-
