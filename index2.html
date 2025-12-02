@@ -10,23 +10,22 @@
 
 <div class="container">
 
-  <!-- STEP 1: Are you ready? -->
+  <!-- STEP 1 -->
   <div id="step1">
     <h1 class="title">Are you ready to see something unique, special & romantic? 💖</h1>
     <div id="choiceButtons">
-        <button class="btn" onclick="choiceYes()">Yes 😘</button>
-        <button class="btn" onclick="choiceNo()">No 😏</button>
+        <button class="btn" id="yesBtn">Yes 😘</button>
+        <button class="btn" id="noBtn">No 😏</button>
     </div>
     <p id="choiceResult" class="result"></p>
-    <button id="nextBtn" class="btn next-btn" onclick="showChapter()" style="display:none;">Next ➜</button>
+    <button id="nextBtn" class="btn next-btn" style="display:none;">Next ➜</button>
   </div>
 
   <!-- STEP 2: CH01 -->
   <div id="chapter" style="display:none; margin-top:20px;">
     <h1 class="title" id="chapterTitle">CH01 : NOT A VERY NICE FIRST MEET</h1>
     <div class="chat" id="chat"></div>
-    <!-- Next button for CH01 -->
-    <button id="chapterNextBtn" class="btn next-btn" style="display:none;" onclick="goPage3()">Next ➜</button>
+    <button id="chapterNextBtn" class="btn next-btn" style="display:none;">Next ➜</button>
   </div>
 
 </div>
