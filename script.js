@@ -7,13 +7,12 @@ function checkAnswer() {
         result.innerHTML = "NICE! You deserve a mind-blowing dynamite kiss 💋💥";
         nextBtn.style.display = "inline-block";
     } else {
-        result.innerHTML = "Nope! Try again 😘";
+        result.innerHTML = "Nope Bubu 😘 Try again!";
         nextBtn.style.display = "none";
     }
 }
 
 function goNext() {
-    // You will tell me what the next page should be, then I’ll build it
-    alert("Next page will come once you give details 😍");
+    // will add page 2 based on your idea
+    alert("Tell me what you want on the next page 💖");
 }
-
