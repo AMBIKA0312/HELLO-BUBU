@@ -1,0 +1,44 @@
+body {
+    margin: 0;
+    background: #fdf6ff;
+    font-family: Poppins, sans-serif;
+}
+
+.container {
+    max-width: 700px;
+    margin: 60px auto;
+    padding: 20px;
+    text-align: center;
+}
+
+.title {
+    font-size: 40px;
+    animation: fadeIn 2s;
+}
+
+.chapter {
+    display: none;
+    margin-top: 40px;
+    animation: fadeIn 1.5s;
+}
+
+.btn {
+    margin-top: 30px;
+    padding: 12px 25px;
+    background: #ff66cc;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+.btn:hover {
+    background: #ff44bb;
+}
+
+/* Animation */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
