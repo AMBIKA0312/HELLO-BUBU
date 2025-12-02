@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", function() {
     // Slides
     const slides = [
         "LAST CHAPTER 📖✨",
-        "Do you want to know the reason why I created my sugar plum? 💖"
+        "Do you want to know the reason why I have been created, my sugar plum? 💖"
         // Slide 2 will show Yes/No buttons
         // Subsequent slides will be controlled dynamically
     ];
