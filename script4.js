@@ -10,46 +10,49 @@ document.addEventListener("DOMContentLoaded", function() {
     let currentSlide = 0;
 
     const slides = [
-        "LAST CHAPTER 📖✨",
-        "Do you want to know why I, your sugar plum, have been created? 💖"
+        { text: "LAST CHAPTER 📖✨", type: "normal" },
+        { text: "Do you want to know why I, your sugar plum, have been created? 💖", type: "question" },
+        { text: "I have been created because the half-owner of your heart 💖 is very happy and thankful for having you all as my friends 😘. This year my birthday was the best so far! 🎉🥰", type: "normal" },
+        { text: "Thank you so much ❤️ Love You 💖", type: "normal" },
+        { text: "Bye Bye for now 👋💞", type: "normal" }
     ];
 
-    // Function to display a slide
-    function showSlide(text) {
-        slideContainer.innerHTML = `<p class="slide-text">${text}</p>`;
-    }
+    function showSlide(index) {
+        const slide = slides[index];
+        slideContainer.innerHTML = `<p class="slide-text">${slide.text}</p>`;
+        slideContainer.querySelector(".slide-text").style.animation = "fadeIn 1s ease-in-out";
 
-    // Reset state for page revisit
-    function resetPage() {
-        currentSlide = 0;
-        showSlide(slides[currentSlide]);
-        nextBtn.style.display = "inline-block";
+        // Reset buttons and result
         choiceButtons.style.display = "none";
         choiceResult.innerHTML = "";
+        nextBtn.style.display = "inline-block";
+
+        if(slide.type === "question") {
+            choiceButtons.style.display = "block";
+            nextBtn.style.display = "none"; // wait until Yes clicked
+        }
     }
 
-    // Initialize page
-    resetPage();
+    // Initial slide
+    showSlide(currentSlide);
 
-    // Next button behavior
     nextBtn.addEventListener("click", function() {
         currentSlide++;
-        if(currentSlide === 1){
-            // Show question with Yes/No buttons
-            showSlide(slides[currentSlide]);
-            choiceButtons.style.display = "block";
-            nextBtn.style.display = "none";
-            choiceResult.innerHTML = "";
+        if(currentSlide >= slides.length) {
+            nextBtn.style.display = "none"; // end
+            return;
         }
+        showSlide(currentSlide);
     });
 
-    // Yes button
     yesBtn.addEventListener("click", function() {
         choiceResult.style.color = "#ff1493";
-        choiceResult.innerHTML = "💖";
+        choiceResult.innerHTML = slides[2].text; // show gratitude message
+        nextBtn.style.display = "inline-block";
+        choiceButtons.style.display = "none";
+        currentSlide = 2; // set to gratitude message
     });
 
-    // No button
     noBtn.addEventListener("click", function() {
         choiceResult.style.color = "red";
         choiceResult.innerHTML = "😏 Retry!";
