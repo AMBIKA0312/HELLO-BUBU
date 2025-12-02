@@ -15,5 +15,5 @@ function checkAnswer() {
 }
 
 function goNext() {
-    window.location.href = "page2.html"; // placeholder for next page
+    window.location.href = "page2.html";
 }
