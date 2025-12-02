@@ -24,6 +24,42 @@ body {
     transform: translateY(-50%);
 }
 
+.slide-container {
+    min-height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    color: #ff007f;
+}
+
+.slide-text {
+    animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+.next-btn {
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    background: #ff69b4;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.next-btn:hover {
+    background: #ff1493;
+}
+
+
 @keyframes floatHearts {
     0% { transform: translateY(0); }
     100% { transform: translateY(-300px); }
