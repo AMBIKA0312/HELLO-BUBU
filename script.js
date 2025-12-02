@@ -1,14 +1,19 @@
-let current = 1;
+function checkAnswer() {
+    let input = document.getElementById("answerInput").value.trim().toLowerCase();
+    let result = document.getElementById("result");
+    let nextBtn = document.getElementById("nextBtn");
 
-function showChapter(n) {
-    document.querySelectorAll(".chapter").forEach(c => c.style.display = "none");
-    document.getElementById(`chapter${n}`).style.display = "block";
+    if (input === "bubu") {
+        result.innerHTML = "NICE! You deserve a mind-blowing dynamite kiss 💋💥";
+        nextBtn.style.display = "inline-block";
+    } else {
+        result.innerHTML = "Nope! Try again 😘";
+        nextBtn.style.display = "none";
+    }
 }
 
-function nextChapter() {
-    current++;
-    if (current > 3) current = 1;
-    showChapter(current);
+function goNext() {
+    // You will tell me what the next page should be, then I’ll build it
+    alert("Next page will come once you give details 😍");
 }
 
-showChapter(1);
