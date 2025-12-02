@@ -1,9 +1,9 @@
-/* VIBRANT BACKGROUND */
+/* Background gradient */
 body {
     margin: 0;
     padding: 0;
     font-family: "Poppins", sans-serif;
-    background: linear-gradient(135deg, #ff3d9b, #ff8fb9, #ffc3e0);
+    background: linear-gradient(135deg, #ff4d9c, #ff9fc3, #ffe6f2);
     height: 100vh;
     display: flex;
     justify-content: center;
@@ -11,37 +11,37 @@ body {
     overflow: hidden;
 }
 
-/* FLOATING HEART OVERLAY */
-.heart-bg::before {
+/* Floating hearts */
+.hearts-bg::before {
     content: "❤️ 💕 💖 💗 💞";
     position: absolute;
-    font-size: 5rem;
-    opacity: 0.15;
-    animation: float 12s linear infinite;
+    font-size: 6rem;
+    opacity: 0.1;
+    animation: floatHearts 12s linear infinite;
     width: 100%;
     text-align: center;
     top: 50%;
     transform: translateY(-50%);
 }
 
-@keyframes float {
-    0% { transform: translateY(20px); }
+@keyframes floatHearts {
+    0% { transform: translateY(0); }
     100% { transform: translateY(-300px); }
 }
 
-/* CENTERED WHITE CARD */
+/* Centered card */
 .container {
-    background: rgba(255, 255, 255, 0.9);
-    padding: 30px 25px;
+    background: rgba(255, 255, 255, 0.95);
+    padding: 35px 25px;
     width: 90%;
     max-width: 420px;
-    border-radius: 20px;
+    border-radius: 25px;
+    box-shadow: 0 8px 30px rgba(255, 50, 130, 0.3);
     text-align: center;
-    box-shadow: 0 0 25px rgba(255, 70, 150, 0.35);
     animation: fadeIn 0.8s ease;
 }
 
-/* FADE ANIMATION */
+/* Fade-in animation */
 @keyframes fadeIn {
     from { opacity: 0; transform: scale(0.85); }
     to { opacity: 1; transform: scale(1); }
@@ -53,7 +53,7 @@ body {
     font-weight: 700;
 }
 
-.sub {
+.sub-title {
     font-size: 1.1rem;
     color: #ff4d9c;
     margin-top: 5px;
@@ -63,7 +63,7 @@ body {
     font-size: 1.1rem;
     font-weight: 600;
     margin-top: 20px;
-    color: #c80055;
+    color: #c70055;
 }
 
 input {
@@ -107,7 +107,7 @@ input:focus {
 }
 
 .next-btn {
-    display: none;
+    display: none; /* hidden initially */
     margin-top: 25px;
     padding: 12px 35px;
     background: #ff2c74;
@@ -122,7 +122,7 @@ input:focus {
     background: #c4004e;
 }
 
-/* FULLY RESPONSIVE */
+/* Responsive */
 @media (max-width: 480px) {
     .title { font-size: 1.7rem; }
     .container { padding: 25px 18px; }
