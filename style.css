@@ -8,7 +8,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    overflow: hidden;
+    overflow: hidden; /* ← THIS was hiding input on phones */
 }
 
 /* Floating hearts */
@@ -59,7 +59,6 @@ body {
     background: #ff1493;
 }
 
-
 @keyframes floatHearts {
     0% { transform: translateY(0); }
     100% { transform: translateY(-300px); }
@@ -75,6 +74,10 @@ body {
     box-shadow: 0 8px 30px rgba(255, 50, 130, 0.3);
     text-align: center;
     animation: fadeIn 0.8s ease;
+
+    /* NEW FIX: allow scrolling on phone so input is visible */
+    max-height: 90vh;
+    overflow-y: auto;
 }
 
 /* Fade-in animation */
@@ -82,6 +85,33 @@ body {
     from { opacity: 0; transform: scale(0.85); }
     to { opacity: 1; transform: scale(1); }
 }
+
+/* 📱 MOBILE FIX: input not visible on phone */
+@media (max-width: 600px) {
+
+    /* Make the whole page scrollable */
+    body {
+        height: auto;
+        min-height: 100vh;
+        overflow-y: auto;   /* ← FIX */
+    }
+
+    /* Make input usable */
+    input[type="text"],
+    input,
+    textarea {
+        width: 90%;
+        font-size: 18px;
+    }
+
+    /* Card adjusts to phone screen */
+    .container {
+        margin-top: 40px;
+        margin-bottom: 40px;
+        padding: 30px 20px;
+    }
+}
+
 
 .title {
     font-size: 2rem;
