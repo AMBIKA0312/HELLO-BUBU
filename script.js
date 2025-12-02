@@ -15,5 +15,6 @@ function checkAnswer() {
 }
 
 function goNext() {
-    alert("Tell me what you want for Page 2 ❤️");
+    window.location.href = "index2.html";
 }
+
