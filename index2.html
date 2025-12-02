@@ -1,39 +1,20 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Page 2 - Animated Girls Chat</title>
-<link rel="stylesheet" href="style.css">
-</head>
-<body>
+<div class="container">
 
-<div class="hearts-bg"></div>
-
-<div class="container" id="container">
-
-    <!-- Step 1: Ready prompt -->
+  <!-- STEP 1 -->
+  <div id="step1">
     <h1 class="title">Are you ready to see something unique, special & romantic? 💖</h1>
     <div id="choiceButtons">
         <button class="btn" onclick="choiceYes()">Yes 😘</button>
         <button class="btn" onclick="choiceNo()">No 😏</button>
     </div>
-
     <p id="choiceResult" class="result"></p>
     <button id="nextBtn" class="btn next-btn" onclick="showChapter()" style="display:none;">Next ➜</button>
+  </div>
 
-    <!-- Step 2: Chapter -->
-    <div id="chapter" style="display:none; margin-top:20px;">
-        <h1 class="title" id="chapterTitle">CH01 : NOT A VERY NICE FIRST MEET</h1>
-        <div class="chat" id="chat">
-            <!-- Chat bubbles with avatars will appear here -->
-        </div>
-    </div>
+  <!-- STEP 2 CH01 -->
+  <div id="chapter" style="display:none; margin-top:20px;">
+    <h1 class="title" id="chapterTitle">CH01 : NOT A VERY NICE FIRST MEET</h1>
+    <div class="chat" id="chat"></div>
+  </div>
 
 </div>
-
-<script src="script2.js"></script>
-</body>
-</html>
-
-
