@@ -3,8 +3,104 @@
 <head>
     <meta charset="UTF-8">
     <title>Game for Bubu</title>
-    <link rel="stylesheet" href="style.css">
+
+    <style>
+        body {
+            margin: 0;
+            background: #ffe6f2;
+            font-family: "Poppins", sans-serif;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .floating-hearts {
+            position: fixed;
+            top: -50px;
+            width: 100%;
+            text-align: center;
+            font-size: 30px;
+            animation: floatHearts 6s infinite linear;
+            opacity: 0.4;
+        }
+
+        @keyframes floatHearts {
+            0% { transform: translateY(0); }
+            100% { transform: translateY(120vh); }
+        }
+
+        .container {
+            max-width: 700px;
+            background: rgba(255, 245, 250, 0.9);
+            padding: 40px;
+            border-radius: 25px;
+            text-align: center;
+            backdrop-filter: blur(6px);
+            box-shadow: 0 4px 25px rgba(255, 80, 140, 0.3);
+            animation: fadeIn 1.5s ease;
+        }
+
+        .title {
+            font-size: 38px;
+            font-weight: bold;
+            color: #ff4f9a;
+            animation: popIn 1s ease;
+        }
+
+        .question {
+            font-size: 20px;
+            color: #ff3e88;
+            margin-top: 20px;
+        }
+
+        #answerInput {
+            width: 80%;
+            padding: 12px;
+            border-radius: 10px;
+            border: 2px solid #ff84c2;
+            outline: none;
+            font-size: 18px;
+            margin-top: 20px;
+        }
+
+        .btn {
+            margin-top: 25px;
+            padding: 12px 30px;
+            background: #ff5fa9;
+            color: white;
+            border: none;
+            border-radius: 12px;
+            cursor: pointer;
+            font-size: 18px;
+            transition: 0.2s;
+        }
+
+        .btn:hover {
+            background: #ff2e88;
+            transform: scale(1.05);
+        }
+
+        #result {
+            margin-top: 25px;
+            font-size: 18px;
+            font-weight: bold;
+            color: #b10067;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes popIn {
+            from { opacity: 0; transform: scale(0.7); }
+            to { opacity: 1; transform: scale(1); }
+        }
+    </style>
 </head>
+
 <body>
 
 <div class="floating-hearts">
@@ -18,9 +114,7 @@
         LET'S PLAY A GAME!! 🎮💕</b>
     </h1>
 
-    <p class="question">
-        WHO IS YOUR BOYFRIEND'S SISTER IS TO YOU? 💭😉
-    </p>
+    <p class="question">WHO IS YOUR BOYFRIEND'S SISTER IS TO YOU? 💭😉</p>
 
     <input type="text" id="answerInput" placeholder="Type your answer here..." />
 
@@ -34,6 +128,36 @@
 
 </div>
 
-<script src="script.js"></script>
+<script>
+    function checkAnswer() {
+        let input = document.getElementById("answerInput").value.trim().toLowerCase();
+        let result = document.getElementById("result");
+        let nextBtn = document.getElementById("nextBtn");
+
+        if (input === "bubu") {
+            result.innerHTML = "💖 NICE!! You deserve a mind-blowing dynamite kiss 💋💥";
+            nextBtn.style.display = "inline-block";
+        } else if (input === "") {
+            result.innerHTML = "😑 Bubu… at least type SOMETHING 🫠";
+            nextBtn.style.display = "none";
+        } else {
+            let funnyMessages = [
+                "😂 OOPS! Wrong answer Bubu… try again cutie!",
+                "😜 Wrong! But you’re still adorable 😘",
+                "🙈 Noooope! Try again princess!",
+                "🤭 Wrong answer 💗 try once more!"
+            ];
+
+            let random = funnyMessages[Math.floor(Math.random() * funnyMessages.length)];
+            result.innerHTML = random;
+            nextBtn.style.display = "none";
+        }
+    }
+
+    function goNext() {
+        alert("Tell me what you want for Page 2 ❤️");
+    }
+</script>
+
 </body>
 </html>
