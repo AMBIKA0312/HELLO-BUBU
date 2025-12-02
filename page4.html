@@ -3,11 +3,12 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Page 4 - Last Chapter</title>
+<title>Chapter 4 - Last Chapter</title>
 <link rel="stylesheet" href="style.css">
 <style>
+  /* Same background and style as previous chapters */
   body {
-    background: #ffe6f2; /* Pinkish romantic */
+    background: #ffd6e8; /* Replace this with your chapters' background color */
     font-family: 'Arial', sans-serif;
     margin:0;
     padding:0;
@@ -22,7 +23,7 @@
     max-width: 600px;
     width: 90%;
     padding: 20px;
-    background: #fff0f5;
+    background: #fff0f5; /* consistent inner container color */
     border-radius: 15px;
     box-shadow: 0 8px 20px rgba(0,0,0,0.2);
   }
@@ -60,7 +61,6 @@
     to {opacity:1;}
   }
 
-  /* Responsive text */
   @media (max-width:500px) {
     .slide-text {
       font-size: 1.2rem;
@@ -70,25 +70,12 @@
       padding:8px 15px;
     }
   }
-
 </style>
 </head>
 <body>
 
 <div class="container">
-  <div id="slideContainer"></div>
+    <div id="slideContainer"></div>
 
-  <div id="choiceButtons" style="margin-top:20px; display:none;">
-      <button class="btn" id="yesBtn">Yes 😘</button>
-      <button class="btn" id="noBtn">No 😏</button>
-  </div>
-
-  <p id="choiceResult" class="result"></p>
-
-  <button id="nextBtn" class="btn">Next ➜</button>
-</div>
-
-<script src="script4.js?v=3"></script>
-</body>
-</html>
-
+    <div id="choiceButtons" style="margin-top:20px; display:none;">
+        <button class="btn" id="yesBtn">Yes
