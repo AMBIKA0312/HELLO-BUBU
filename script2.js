@@ -1,13 +1,27 @@
+const choiceResult = document.getElementById("choiceResult");
+const nextBtn = document.getElementById("nextBtn");
+const choiceButtons = document.getElementById("choiceButtons");
+const chapter = document.getElementById("chapter");
+const chat = document.getElementById("chat");
+
+function choiceYes() {
+    choiceResult.style.color = "#ff007f";
+    choiceResult.innerHTML = "Nice choice 😘";
+    nextBtn.style.display = "inline-block";
+    choiceButtons.style.display = "none";
+}
+
+function choiceNo() {
+    choiceResult.style.color = "red";
+    choiceResult.innerHTML = "What! I will still show you 😏";
+    nextBtn.style.display = "inline-block";
+    choiceButtons.style.display = "none";
+}
+
 function showChapter() {
-    // hide step1 completely
-    document.getElementById("step1").style.display = "none";
+    document.getElementById("step1").style.display = "none"; // hide Step 1
+    chapter.style.display = "block"; // show CH01
 
-    // show chapter
-    const chapter = document.getElementById("chapter");
-    chapter.style.display = "block";
-
-    // populate chat
-    const chat = document.getElementById("chat");
     const messages = [
         { avatar:"https://i.imgur.com/JS2rIxl.png", text:"Add me to the class group CR 📝✨", side:"left", future:"👩‍🎓 (Future ME: add me to your heart BUBU 💖😘)"},
         { avatar:"https://i.imgur.com/8M2kMsd.png", text:"First ask permission from HOD, you are not in the list 🤨📋", side:"right"}
@@ -48,7 +62,6 @@ function showChapter() {
             }
 
             chat.appendChild(row);
-
         }, delay);
         delay += 1800;
     });
