@@ -284,3 +284,33 @@ input:focus {
     .title { font-size: 1.7rem; }
     .container { padding: 25px 18px; }
 }
+
+.slide-text {
+    font-size: 1.5rem;
+    color: #ff007f;
+    animation: fadeIn 1s ease-in-out;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+@keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+.next-btn, .btn {
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    background: #ff69b4;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    margin: 5px;
+    transition: 0.3s;
+}
+
+.next-btn:hover, .btn:hover {
+    background: #ff1493;
+}
+
