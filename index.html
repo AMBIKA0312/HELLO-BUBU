@@ -2,43 +2,32 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Birthday Story</title>
+    <title>Game for Bubu</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<div class="container">
+<div class="game-box">
 
-    <h1 class="title">✨ My Birthday Story ✨</h1>
+    <h1><b>HELLO BUBU<br>LET'S PLAY A GAME!!</b></h1>
 
-    <div class="chapter" id="chapter1">
-        <h2>Chapter 1: The Beginning</h2>
-        <p>
-            This year you guys made my birthday so special.  
-            I will never forget the love, effort, and memories.
-        </p>
-    </div>
+    <p class="question">
+        WHO IS YOUR BOYFRIEND'S SISTER IS TO YOU?
+    </p>
 
-    <div class="chapter" id="chapter2">
-        <h2>Chapter 2: The Surprise</h2>
-        <p>
-            The surprise you planned still feels unreal.  
-            The decorations, the vibes, the laughter — perfect! ❤️
-        </p>
-    </div>
+    <input type="text" id="answerInput" placeholder="Type your answer here..." />
 
-    <div class="chapter" id="chapter3">
-        <h2>Chapter 3: My Friends</h2>
-        <p>
-            Thank you for standing by me, celebrating me,  
-            and making me feel so special.
-        </p>
-    </div>
+    <button class="btn" onclick="checkAnswer()">Submit</button>
 
-    <button onclick="nextChapter()" class="btn">Next Chapter →</button>
+    <p id="result"></p>
+
+    <button id="nextBtn" class="btn next" style="display:none;" onclick="goNext()">
+        Next →
+    </button>
 
 </div>
 
 <script src="script.js"></script>
 </body>
 </html>
+
