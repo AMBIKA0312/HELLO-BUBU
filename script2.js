@@ -20,17 +20,17 @@ function choiceNo() {
 
 function showChapter() {
     chapter.style.display = "block";
-    nextBtn.style.display = "none"; // hide Next after showing chapter
-    choiceResult.style.display = "none"; // hide previous choice text
+    nextBtn.style.display = "none"; 
+    choiceResult.style.display = "none";
 
-    // Show chat bubbles with delay
+    // Chat messages with emojis
     const messages = [
-        { text: "Add me to the class group CR", side: "left", future: "(Future ME: add me to your heart BUBU)" },
-        { text: "First ask permission from HOD, you are not in the list", side: "right" }
+        { text: "Add me to the class group CR 📝✨", side: "left", future: "👩‍🎓 (Future ME: add me to your heart BUBU 💖😘)" },
+        { text: "First ask permission from HOD, you are not in the list 🤨📋", side: "right" }
     ];
 
     let delay = 500;
-    messages.forEach((msg, index) => {
+    messages.forEach((msg) => {
         setTimeout(() => {
             const bubble = document.createElement("div");
             bubble.classList.add("bubble", msg.side);
@@ -44,12 +44,11 @@ function showChapter() {
             }
             chat.appendChild(bubble);
 
-            // Optional: add little sparkle GIF
-            const sparkle = document.createElement("img");
-            sparkle.src = "https://i.imgur.com/2f3DqvW.gif"; // small heart sparkle GIF
-            sparkle.classList.add("sparkle");
-            bubble.appendChild(sparkle);
-
+            // Add small animated heart emojis to bubbles
+            const heart = document.createElement("span");
+            heart.classList.add("emoji");
+            heart.innerText = "💖";
+            bubble.appendChild(heart);
         }, delay);
         delay += 1500;
     });
