@@ -2,29 +2,36 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Bubu Game</title>
+    <title>Game for Bubu</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<div class="hearts"></div>
+<div class="floating-hearts">
+    ❤️ 💕 💖 💗 💓 💞
+</div>
 
-<div class="wrapper">
-    <div class="card">
+<div class="container">
 
-        <h1 class="title">HELLO BUBU<br><span class="pink">LET’S PLAY A GAME!!</span></h1>
+    <h1 class="title">
+        <b>HELLO BUBU 😘<br>
+        LET'S PLAY A GAME!! 🎮💕</b>
+    </h1>
 
-        <p class="question">WHO IS YOUR BOYFRIEND'S SISTER IS TO YOU?</p>
+    <p class="question">
+        WHO IS YOUR BOYFRIEND'S SISTER IS TO YOU? 💭😉
+    </p>
 
-        <input type="text" id="answerInput" placeholder="Type your answer..." class="inputBox">
+    <input type="text" id="answerInput" placeholder="Type your answer here..." />
 
-        <button class="btn" onclick="checkAnswer()">Submit</button>
+    <button onclick="checkAnswer()" class="btn">Submit 💌</button>
 
-        <p id="result"></p>
+    <p id="result"></p>
 
-        <button id="nextBtn" class="btn next" style="display:none;" onclick="goNext()">Next →</button>
+    <button id="nextBtn" class="btn next" style="display:none;" onclick="goNext()">
+        Next → 😏
+    </button>
 
-    </div>
 </div>
 
 <script src="script.js"></script>
