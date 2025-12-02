@@ -20,8 +20,9 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     window.showChapter = function() {
-        document.getElementById("step1").style.display = "none"; // hide Step 1
-        chapter.style.display = "block"; // show CH01
+        // hide step 1
+        document.getElementById("step1").style.display = "none";
+        chapter.style.display = "block";
 
         const messages = [
             { avatar:"https://i.imgur.com/JS2rIxl.png", text:"Add me to the class group CR 📝✨", side:"left", future:"👩‍🎓 (Future ME: add me to your heart BUBU 💖😘)"},
