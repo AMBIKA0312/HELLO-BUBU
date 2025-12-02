@@ -1,80 +1,128 @@
+/* GLOBAL BACKGROUND */
 body {
     margin: 0;
-    padding: 0;
-    background: #ffd6e8;
-    font-family: Poppins, sans-serif;
+    font-family: "Poppins", sans-serif;
+    background: linear-gradient(135deg, #ffd5eb, #ffb6d9);
     height: 100vh;
+    overflow: hidden;
     display: flex;
     justify-content: center;
     align-items: center;
-
-    /* soft floating hearts background */
-    background-image: url('https://i.imgur.com/0Zy3dA9.png');
-    background-size: cover;
-    background-position: center;
-    animation: fadeIn 1.5s ease-in-out;
 }
 
-.game-box {
-    background: rgba(255, 240, 245, 0.8);
-    padding: 40px;
-    border-radius: 20px;
-    width: 80%;
-    max-width: 450px;
+/* FLOATING HEARTS BACKGROUND */
+.hearts::before,
+.hearts::after {
+    content: "❤️";
+    font-size: 35px;
+    position: absolute;
+    animation: float 6s infinite ease-in-out;
+}
+
+.hearts::before {
+    left: 20%;
+    animation-duration: 5s;
+    opacity: 0.4;
+}
+
+.hearts::after {
+    right: 25%;
+    animation-duration: 7s;
+    opacity: 0.6;
+}
+
+@keyframes float {
+    0% { transform: translateY(100vh); }
+    100% { transform: translateY(-100vh); }
+}
+
+/* CARD */
+.wrapper {
+    position: relative;
+    z-index: 1;
+}
+
+.card {
+    width: 90%;
+    max-width: 420px;
+    padding: 40px 30px;
+    border-radius: 25px;
+    background: white;
+    box-shadow: 0 8px 25px rgba(255, 57, 129, 0.3);
     text-align: center;
-    box-shadow: 0 4px 20px rgba(255, 105, 180, 0.3);
-    backdrop-filter: blur(4px);
-    animation: slideUp 1s ease;
+    animation: fadeIn 1.2s ease-out;
+}
+
+/* TEXT STYLING */
+.title {
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    line-height: 1.4;
+}
+
+.pink {
+    color: #ff3f8e;
 }
 
 .question {
+    margin: 15px 0 20px;
     font-size: 18px;
-    margin-top: 15px;
-    margin-bottom: 20px;
+    font-weight: 500;
+    color: #ff2b79;
 }
 
-#answerInput {
+/* INPUT */
+.inputBox {
     width: 80%;
     padding: 12px;
-    border-radius: 10px;
-    border: 2px solid #ff82b2;
-    outline: none;
+    border-radius: 12px;
+    border: 2px solid #ff7bb0;
     font-size: 16px;
+    outline: none;
+    transition: 0.2s;
 }
 
+.inputBox:focus {
+    border-color: #ff3f8e;
+    box-shadow: 0 0 8px rgba(255, 71, 134, 0.4);
+}
+
+/* BUTTONS */
 .btn {
     margin-top: 20px;
     padding: 12px 25px;
-    background: #ff4fa3;
+    background: #ff3f8e;
     color: white;
     border: none;
-    border-radius: 12px;
-    cursor: pointer;
+    border-radius: 14px;
     font-size: 18px;
+    cursor: pointer;
+    transition: 0.2s;
+    box-shadow: 0 4px 10px rgba(255, 50, 128, 0.3);
 }
 
 .btn:hover {
-    background: #ff2c8a;
-}
-
-#result {
-    margin-top: 20px;
-    font-size: 18px;
-    color: #c4006e;
-    font-weight: bold;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 14px rgba(255, 50, 128, 0.4);
 }
 
 .next {
-    margin-top: 15px;
+    margin-top: 10px;
+    background: #ff1f6d;
 }
 
-/* animations */
+/* RESULT TEXT */
+#result {
+    margin-top: 22px;
+    font-size: 18px;
+    font-weight: 600;
+    color: #c90061;
+}
+
+/* CARD ANIMATION */
 @keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
+    from { opacity: 0; transform: translateY(40px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
-@keyframes slideUp {
-    from { transform: translateY(40px); opacity: 0; }
-    to { transform: translateY(0); opacity: 1; }
-}
