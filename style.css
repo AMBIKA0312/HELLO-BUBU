@@ -1,44 +1,80 @@
 body {
     margin: 0;
-    background: #fdf6ff;
+    padding: 0;
+    background: #ffd6e8;
     font-family: Poppins, sans-serif;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    /* soft floating hearts background */
+    background-image: url('https://i.imgur.com/0Zy3dA9.png');
+    background-size: cover;
+    background-position: center;
+    animation: fadeIn 1.5s ease-in-out;
 }
 
-.container {
-    max-width: 700px;
-    margin: 60px auto;
-    padding: 20px;
+.game-box {
+    background: rgba(255, 240, 245, 0.8);
+    padding: 40px;
+    border-radius: 20px;
+    width: 80%;
+    max-width: 450px;
     text-align: center;
+    box-shadow: 0 4px 20px rgba(255, 105, 180, 0.3);
+    backdrop-filter: blur(4px);
+    animation: slideUp 1s ease;
 }
 
-.title {
-    font-size: 40px;
-    animation: fadeIn 2s;
+.question {
+    font-size: 18px;
+    margin-top: 15px;
+    margin-bottom: 20px;
 }
 
-.chapter {
-    display: none;
-    margin-top: 40px;
-    animation: fadeIn 1.5s;
+#answerInput {
+    width: 80%;
+    padding: 12px;
+    border-radius: 10px;
+    border: 2px solid #ff82b2;
+    outline: none;
+    font-size: 16px;
 }
 
 .btn {
-    margin-top: 30px;
+    margin-top: 20px;
     padding: 12px 25px;
-    background: #ff66cc;
+    background: #ff4fa3;
     color: white;
     border: none;
-    border-radius: 10px;
+    border-radius: 12px;
     cursor: pointer;
     font-size: 18px;
 }
 
 .btn:hover {
-    background: #ff44bb;
+    background: #ff2c8a;
 }
 
-/* Animation */
+#result {
+    margin-top: 20px;
+    font-size: 18px;
+    color: #c4006e;
+    font-weight: bold;
+}
+
+.next {
+    margin-top: 15px;
+}
+
+/* animations */
 @keyframes fadeIn {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideUp {
+    from { transform: translateY(40px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
 }
